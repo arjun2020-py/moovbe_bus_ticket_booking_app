@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../driverDetails/view/driver_details.dart';
+
 class AddDriver extends StatelessWidget {
   const AddDriver({super.key});
 
@@ -55,21 +57,6 @@ class AddDriver extends StatelessWidget {
             SizedBox(
               height: 350.h,
             ),
-            // SizedBox(
-            //   width: 250.w,
-            //   height: 40.h,
-            //   child: ElevatedButton(
-            //     onPressed: () {},
-            //     style: ElevatedButton.styleFrom(
-            //         primary: Color(0xffed3839),
-            //         shape: RoundedRectangleBorder(
-            //             borderRadius: BorderRadius.circular(6.r))),
-            //     child: Text(
-            //       'Save',
-            //       style: TextStyle(color: Colors.white, fontSize: 16.sp),
-            //     ),
-            //   ),
-            // )
           ],
         ),
       ),
@@ -86,7 +73,7 @@ class AddDriver extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => AddDriver(),
+                    builder: (context) => DriverDetails(),
                   ));
                 },
                 style: ElevatedButton.styleFrom(
