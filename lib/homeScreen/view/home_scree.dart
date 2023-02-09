@@ -140,9 +140,21 @@ class HomeScreen extends StatelessWidget {
               child: ListView.builder(
                 itemCount: 10,
                 itemBuilder: (BuildContext context, int index) {
-                  return const Card(
-                    child: ListTile(
-                      title: Text('data'),
+                  return Padding(
+                    padding: EdgeInsets.only(top: 30.r),
+                    child: Card(
+                      child: ListTile(
+                        leading: ClipOval(
+                            child: Image.asset('assets/images/bus2.png')),
+                        title: Text('data'),
+                        subtitle: Text('data'),
+                        trailing: ElevatedButton(
+                          onPressed: () {},
+                          child: Text('Manage'),
+                          style: ElevatedButton.styleFrom(
+                              primary: Color(0xffed3839)),
+                        ),
+                      ),
                     ),
                   );
                 },
