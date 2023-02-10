@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../driverDetails/view/driver_details.dart';
 import '../bloc/add_driver_bloc.dart';
+import '../widget/add_driver_txtfiled.dart';
+import '../widget/save_button_widget.dart';
 
 class AddDriver extends StatelessWidget {
   AddDriver({super.key});
@@ -49,29 +51,14 @@ class AddDriver extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: TextFormField(
-                      autofocus: true,
-                      decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          hintText: 'Enter Name',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.r)))),
+                  child: AddDriverTxtFiled(txt: 'Enter Name'),
                 ),
                 // SizedBox(
                 //   height: 5.r,
                 // ),
                 Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: TextFormField(
-                      autofocus: true,
-                      decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          hintText: 'Enter License Number',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.r)))),
-                ),
+                    padding: const EdgeInsets.all(15.0),
+                    child: AddDriverTxtFiled(txt: 'Enter License Number')),
                 SizedBox(
                   height: 350.h,
                 ),
@@ -89,17 +76,7 @@ class AddDriver extends StatelessWidget {
                 child: SizedBox(
                   width: 250.w,
                   height: 40.h,
-                  child: ElevatedButton(
-                    onPressed: () => add_bloc.add(AddEvent()),
-                    style: ElevatedButton.styleFrom(
-                        primary: Color(0xffed3839),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(6.r))),
-                    child: Text(
-                      'Save',
-                      style: TextStyle(color: Colors.white, fontSize: 16.sp),
-                    ),
-                  ),
+                  child: SaveButton(add_bloc: add_bloc),
                 )),
           ),
         ),
@@ -107,3 +84,4 @@ class AddDriver extends StatelessWidget {
     );
   }
 }
+
