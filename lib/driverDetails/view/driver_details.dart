@@ -73,12 +73,7 @@ class DriverDetails extends StatelessWidget {
                   width: 250.w,
                   height: 40.h,
                   child: ElevatedButton(
-                    onPressed: () {},
-                    //  () {
-                    //   Navigator.of(context).push(MaterialPageRoute(
-                    //     builder: (context) => AddDriver(),
-                    //   ));
-                    // },
+                    onPressed: () => driver_bloc.add(DriverEvent()),
                     style: ElevatedButton.styleFrom(
                         primary: Color(0xffed3839),
                         shape: RoundedRectangleBorder(
