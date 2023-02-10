@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_cart/addDriver/add_driver.dart';
 
 import '../bloc/driver_details_bloc.dart';
+import '../widget/driver_deatils_card.dart';
 
 class DriverDetails extends StatelessWidget {
   DriverDetails({super.key});
@@ -20,8 +21,13 @@ class DriverDetails extends StatelessWidget {
               builder: (context) => AddDriver(),
             ));
           } else {
-            ScaffoldMessenger.of(context)
-                .showSnackBar(SnackBar(content: Text('Some error is occured')));
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text(
+                  'Some error is occured',
+                ),
+              ),
+            );
           }
         },
         child: Scaffold(
@@ -34,32 +40,16 @@ class DriverDetails extends StatelessWidget {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: Icon(Icons.arrow_back)),
+                  icon: const Icon(Icons.arrow_back)),
               centerTitle: true,
-              title: Text('Driver List'),
+              title: const Text('Driver List'),
             ),
           ),
-          body: ListView.builder(
-            itemCount: 10,
-            itemBuilder: (BuildContext context, int index) {
-              return Padding(
-                padding: EdgeInsets.only(top: 30.r),
-                child: Card(
-                  child: ListTile(
-                    leading: ClipOval(
-                        child: Image.asset('assets/images/Ellipse.png')),
-                    title: Text('data'),
-                    subtitle: Text('data'),
-                    trailing: ElevatedButton(
-                      onPressed: () {},
-                      child: Text('Delete'),
-                      style:
-                          ElevatedButton.styleFrom(primary: Color(0xffed3839)),
-                    ),
-                  ),
-                ),
-              );
-            },
+          body: const DriverDetailsCard(
+            img: 'assets/images/Ellipse.png',
+            txt1: 'data',
+            txt2: 'data',
+            txt3: 'Delete',
           ),
           bottomNavigationBar: PreferredSize(
             preferredSize: const Size(
@@ -75,7 +65,7 @@ class DriverDetails extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () => driver_bloc.add(DriverEvent()),
                     style: ElevatedButton.styleFrom(
-                        primary: Color(0xffed3839),
+                        primary: const Color(0xffed3839),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(6.r))),
                     child: Text(

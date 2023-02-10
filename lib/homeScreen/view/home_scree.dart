@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(65.h),
-          child: HomeAppbar(
+          child: const HomeAppbar(
             img: 'assets/images/logo.png',
           ),
         ),
