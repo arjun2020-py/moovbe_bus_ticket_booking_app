@@ -4,6 +4,7 @@ import 'package:my_cart/busDetails/bus_details.dart';
 import 'package:my_cart/driverDetails/view/driver_details.dart';
 import 'package:my_cart/loginScreen/login_screen.dart';
 
+import '../widget/bus_list.dart';
 import '../widget/card_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -82,30 +83,7 @@ class HomeScreen extends StatelessWidget {
                 )
               ],
             ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: 10,
-                itemBuilder: (BuildContext context, int index) {
-                  return Padding(
-                    padding: EdgeInsets.only(top: 30.r),
-                    child: Card(
-                      child: ListTile(
-                        leading: ClipOval(
-                            child: Image.asset('assets/images/bus2.png')),
-                        title: const Text('data'),
-                        subtitle: const Text('data'),
-                        trailing: ElevatedButton(
-                          onPressed: () {},
-                          child: const Text('Manage'),
-                          style: ElevatedButton.styleFrom(
-                              primary: const Color(0xffed3839)),
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
+            BusList(),
           ],
         ));
   }
