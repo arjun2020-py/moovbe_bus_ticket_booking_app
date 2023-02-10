@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_cart/addDriver/add_driver.dart';
 
 import '../bloc/driver_details_bloc.dart';
+import '../widget/custom_button_widget.dart';
 import '../widget/driver_deatils_card.dart';
 
 class DriverDetails extends StatelessWidget {
@@ -21,13 +22,11 @@ class DriverDetails extends StatelessWidget {
               builder: (context) => AddDriver(),
             ));
           } else {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text(
+            ScaffoldMessenger.of(context)
+                .showSnackBar(const SnackBar(content: 
+                Text(
                   'Some error is occured',
-                ),
-              ),
-            );
+                  ),),);
           }
         },
         child: Scaffold(
@@ -46,7 +45,7 @@ class DriverDetails extends StatelessWidget {
             ),
           ),
           body: const DriverDetailsCard(
-            img: 'assets/images/Ellipse.png',
+            img:  'assets/images/Ellipse.png',
             txt1: 'data',
             txt2: 'data',
             txt3: 'Delete',
@@ -62,17 +61,7 @@ class DriverDetails extends StatelessWidget {
                 child: SizedBox(
                   width: 250.w,
                   height: 40.h,
-                  child: ElevatedButton(
-                    onPressed: () => driver_bloc.add(DriverEvent()),
-                    style: ElevatedButton.styleFrom(
-                        primary: const Color(0xffed3839),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(6.r))),
-                    child: Text(
-                      'Add Driver',
-                      style: TextStyle(color: Colors.white, fontSize: 16.sp),
-                    ),
-                  ),
+                  child: CustomButtonWidget(driver_bloc: driver_bloc,txt: 'Add Driver',color: Colors.white),
                 )),
           ),
         ),
