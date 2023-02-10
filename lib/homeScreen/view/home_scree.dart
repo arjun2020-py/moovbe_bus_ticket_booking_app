@@ -15,7 +15,9 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(65.h),
-          child: HomeAppbar(),
+          child: HomeAppbar(
+            img: 'assets/images/logo.png',
+          ),
         ),
         body: Column(
           children: [
@@ -63,9 +65,13 @@ class HomeScreen extends StatelessWidget {
                 )
               ],
             ),
-            BusList(),
+            const BusList(
+              img: 'assets/images/bus2.png',
+              txt1: 'data',
+              txt2: 'data',
+              txt3: 'Mange',
+            ),
           ],
         ));
   }
 }
-

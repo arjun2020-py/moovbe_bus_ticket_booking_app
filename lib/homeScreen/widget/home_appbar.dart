@@ -4,10 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../loginScreen/view/login_screen.dart';
 
 class HomeAppbar extends StatelessWidget {
-  const HomeAppbar({
-    super.key,
-  });
-
+  const HomeAppbar({super.key, required this.img});
+  final String img;
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -17,7 +15,7 @@ class HomeAppbar extends StatelessWidget {
       title: Padding(
         padding: EdgeInsets.only(top: 30.r),
         child: Image.asset(
-          'assets/images/logo.png',
+          img,
           height: 250.h,
         ),
       ),
