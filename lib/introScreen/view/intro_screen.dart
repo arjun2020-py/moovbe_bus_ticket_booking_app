@@ -30,32 +30,35 @@ class IntroScreen extends StatelessWidget {
         },
         child: Scaffold(
           backgroundColor: const Color(0xffed3839),
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              SizedBox(
-                height: 100.h,
-              ),
-              Center(child: Image.asset('assets/images/logo.png')),
-              SizedBox(
-                height: 50.h,
-              ),
-              SizedBox(
-                width: 250.w,
-                height: 40.h,
-                child: ElevatedButton(
-                  onPressed: () => intro_bloc.add(IntroEvent()),
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(6.r))),
-                  child: Text(
-                    'Get Started',
-                    style: TextStyle(color: Color(0xffed3839), fontSize: 16.sp),
-                  ),
+          body: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  height: 100.h,
                 ),
-              )
-            ],
+                Center(child: Image.asset('assets/images/logo.png')),
+                SizedBox(
+                  height: 50.h,
+                ),
+                SizedBox(
+                  width: 250.w,
+                  height: 40.h,
+                  child: ElevatedButton(
+                    onPressed: () => intro_bloc.add(IntroEvent()),
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(6.r))),
+                    child: Text(
+                      'Get Started',
+                      style:
+                          TextStyle(color: Color(0xffed3839), fontSize: 16.sp),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),

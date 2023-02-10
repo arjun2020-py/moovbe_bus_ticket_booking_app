@@ -4,6 +4,8 @@ import 'package:my_cart/busDetails/bus_details.dart';
 import 'package:my_cart/driverDetails/view/driver_details.dart';
 import 'package:my_cart/loginScreen/login_screen.dart';
 
+import '../widget/card_widget.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -30,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (context) => LoginScreen(),
                       )),
-                  icon: Icon(Icons.logout_sharp))
+                  icon: const Icon(Icons.logout_sharp))
             ],
           ),
         ),
@@ -49,40 +51,13 @@ class HomeScreen extends StatelessWidget {
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => BusDetails(),
+                          builder: (context) => const BusDetails(),
                         )),
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.r)),
-                      color: const Color(0xffed3839),
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 10.h,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(right: 65.r),
-                            child: Text(
-                              'Bus',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20.sp,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          const Text(
-                            'Manage your bus',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          SizedBox(
-                            height: 20.h,
-                          ),
-                          Image.asset(
-                            'assets/images/image 2.png',
-                            height: 100.h,
-                          )
-                        ],
-                      ),
+                    child: const CardWidget(
+                      text1: 'Bus',
+                      text2: 'Manage your bus',
+                      image: 'assets/images/image 2.png',
+                      color: Color(0xffed3839),
                     ),
                   ),
                 ),
@@ -92,45 +67,16 @@ class HomeScreen extends StatelessWidget {
                       height: 180.h,
                       width: 170.w,
                       child: InkWell(
-                        onTap: () =>
-                            Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => DriverDetails(),
-                        )),
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.r)),
-                          color: Colors.black,
-                          child: Column(
-                            children: [
-                              SizedBox(
-                                height: 10.h,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(right: 55.r),
-                                child: Text(
-                                  'Driver',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20.sp,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              const Text(
-                                'Manage your driver',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              SizedBox(
-                                height: 20.h,
-                              ),
-                              Image.asset(
-                                'assets/images/driver.png',
-                                height: 100.h,
-                                //color: Colors.white,
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
+                          onTap: () =>
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => DriverDetails(),
+                              )),
+                          child: const CardWidget(
+                            text1: 'Driver',
+                            text2: 'Manage your driver',
+                            image: 'assets/images/driver.png',
+                            color: Colors.black,
+                          )),
                     ),
                   ],
                 )
@@ -146,13 +92,13 @@ class HomeScreen extends StatelessWidget {
                       child: ListTile(
                         leading: ClipOval(
                             child: Image.asset('assets/images/bus2.png')),
-                        title: Text('data'),
-                        subtitle: Text('data'),
+                        title: const Text('data'),
+                        subtitle: const Text('data'),
                         trailing: ElevatedButton(
                           onPressed: () {},
-                          child: Text('Manage'),
+                          child: const Text('Manage'),
                           style: ElevatedButton.styleFrom(
-                              primary: Color(0xffed3839)),
+                              primary: const Color(0xffed3839)),
                         ),
                       ),
                     ),
