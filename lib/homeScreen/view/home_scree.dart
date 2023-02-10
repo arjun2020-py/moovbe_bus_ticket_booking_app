@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_cart/busDetails/bus_details.dart';
 import 'package:my_cart/driverDetails/view/driver_details.dart';
-import 'package:my_cart/loginScreen/login_screen.dart';
 
 import '../widget/bus_list.dart';
 import '../widget/card_widget.dart';
+import '../widget/home_appbar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,27 +15,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(65.h),
-          child: AppBar(
-            automaticallyImplyLeading: false,
-            backgroundColor: Colors.black,
-            centerTitle: true,
-            title: Padding(
-              padding: EdgeInsets.only(top: 30.r),
-              child: Image.asset(
-                'assets/images/logo.png',
-                height: 250.h,
-              ),
-            ),
-            actions: [
-              IconButton(
-                  onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LoginScreen(),
-                      )),
-                  icon: const Icon(Icons.logout_sharp))
-            ],
-          ),
+          child: HomeAppbar(),
         ),
         body: Column(
           children: [
@@ -88,3 +68,4 @@ class HomeScreen extends StatelessWidget {
         ));
   }
 }
+
