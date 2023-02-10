@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_cart/homeScreen/home_screen.dart';
 import 'package:my_cart/loginScreen/bloc/login_screen_bloc.dart';
 
+import '../widget/login_widget.dart';
+
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
 
@@ -68,28 +70,14 @@ class LoginScreen extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: TextFormField(
-                      autofocus: true,
-                      decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          hintText: 'Enter Username',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.r)))),
+                  child: LoginTextFiled(text: 'Enter Username'),
                 ),
                 // SizedBox(
                 //   height: 5.r,
                 // ),
                 Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: TextFormField(
-                      autofocus: true,
-                      decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          hintText: 'Enter Passerod',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.r)))),
+                  child: LoginTextFiled(text: 'Enter Passerod'),
                 ),
                 SizedBox(
                   height: 200.h,
